@@ -17,5 +17,14 @@
   },
   "engines": {
     "npm": "4.5.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulwick1/elsewhere3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulwick1/elsewhere3/issues"
+  },
+  "homepage": "https://github.com/paulwick1/elsewhere3#readme"
 }
