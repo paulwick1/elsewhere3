@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json 
 app.use(bodyParser.json())
 
-app.use(express.static('public'))
+// app.use(express.static('public'))
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 require('./routing/apiRoutes.js')(app);
 require('./routing/htmlRoutes.js')(app);
