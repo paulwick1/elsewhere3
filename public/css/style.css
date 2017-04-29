@@ -1,0 +1,113 @@
+body {
+	overflow-x: hidden;
+}
+
+nav {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	transform: translate3d(-200px, 0, 0);
+	transition: transform 0.4s ease;
+}
+
+.active-nav nav{
+	transform: translate3d(0, 0, 0);
+	
+}
+
+nav ul {
+	list-style; none;
+	margin-top: 10px;
+}
+
+.nav-toggle-btn {
+	display: block;
+	position: absolute;
+	left: 200px;
+	width: 40px;
+	height: 40px;
+	background-color: #666;
+	color: white;
+	font-size: 20px;
+}
+.active-nav .nav-toggle-btn{
+	transform: translate3d(0, 0, 0);
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
+
+
+.content {
+	padding-left: 50px;
+	height: 200px;
+	transition: transform 0.4s ease;
+}
+
+.active-nav .content {
+	transform: translate3d(200px, 0, 0);
+}
+
+.panel.panel-green {
+	border-color: rgb(92, 184, 92);
+	background-color: rgb(92, 184, 92);
+	border-width: 3px;
+	width: 350px;
+	margin-bottom: 10px;
+}
+
+#scenarioBox2 {
+	width: 750px;
+}
+
+.panel-heading {
+	font-weight: bold;
+	color: white;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.col-lg-12 {
+	padding-left: 0px;
+}
+
+.scenarioLoadButton {
+	margin-top: 6px;
+	background-color: rgb(92, 184, 92);
+	color: white;
+}
+
+.scenarioDeleteButton {
+	margin-top: 6px;
+	background-color: red;
+	color: white;
+}
+
+#handsonTable {
+	width: 750px;
+	height: 320px;
+	border-width: 3px;
+}
+
+.row {
+	width: 400px;
+	height: 260px;
+}
+
+.pageTitle {
+	color: #666;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 48px;
+	margin: 24px 0 10px;
+	text-decoration: underline;
+}
+
+.navStyle {
+	background-color: Gainsboro;
+}

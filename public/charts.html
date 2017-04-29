@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Elsewhere</title>
+    
+    
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://localhost:8080/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost:8080/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://localhost:8080/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- forecast table CSS -->
+    <link href="http://localhost:8080/css/table.css" rel="stylesheet">
+
+
+
+    <!-- end CSS -->
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="http://handsontable.com/dist/handsontable.full.js"></script> -->
+<link rel="stylesheet" media="screen" href="http://handsontable.com/dist/handsontable.full.css">
+<script src="http://localhost:8080/script/action.js"></script>
+<script src="http://handsontable.github.io/handsontable-ruleJS/lib/handsontable/handsontable.full.js"></script>
+<script src="http://handsontable.github.io/handsontable-ruleJS/lib/RuleJS/lib/formulajs/formula.js"></script>
+<script src="http://handsontable.github.io/handsontable-ruleJS/lib/RuleJS/js/parser.js"></script>
+<script src="http://handsontable.github.io/handsontable-ruleJS/lib/RuleJS/js/ruleJS.js"></script>
+<script src="http://handsontable.github.io/handsontable-ruleJS/lib/handsontable/handsontable.formula.js"></script>
+<!-- style CSS -->
+<link href="http://localhost:8080/css/style.css" rel="stylesheet">
+    <body>
+     <!-- Navigation -->
+        <nav class="navStyle">
+            
+            <button class="nav-toggle-btn">>></button>
+
+        <!-- /.navbar-static-side -->
+        <!-- <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                --> 
+            <ul class="nav in" id="side-menu">
+                <li>
+                    <a href="/login"><i class="fa fa-user fa-fw"></i>Log-in/out</a>
+                </li>
+                <li>
+                    <a href="/dashboard"><i class="fa fa-home fa-fw"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="/charts"><i class="fa fa-table fa-fw"></i>Scenarios</a>
+                </li>
+                <li>
+                    <a href="/reports"><i class="fa fa-edit fa-fw"></i>Reports</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- sidebar items end -->
+        <div class="content">
+            <div>
+                <img src="http://localhost:8080/images/website-logo1.jpg" alt="Elsewhere Logo" style="width:300px;height:75px;margin-top:10px;">
+            </div>
+            <h2 class="pageTitle">Scenarios Editor</h2>
+            <div class="panel panel-green">
+                <h2 class="panel-heading">Saved Scenarios</h2>
+                    <div class="panel-footer">
+                        <ol>
+                            <li>
+                              <div>Example-1 
+                                <button class='scenarioLoadButton' id='scenarioLoad1'>Load</button>
+                                <button class='scenarioDeleteButton' id='scenarioDelete1'>Delete</button>
+                              </div>
+                            </li>
+
+                            <li>
+                              <div>None Saved 
+                                <button class='scenarioLoadButton' id='scenarioLoad2'>Load</button>
+                                <button class='scenarioDeleteButton' id='scenarioDelete2'>Delete</button>
+                              </div>
+                            </li>
+
+                            <li>
+                              <div>None Saved 
+                                <button class='scenarioLoadButton' id='scenarioLoad3'>Load</button>
+                                <button class='scenarioDeleteButton' id='scenarioDelete3'>Delete</button>
+                              </div>
+                            </li>
+                        </ol>
+                    </div>
+            </div>
+<!-- handsontable examples -->
+            <div class="panel panel-green" id="scenarioBox2">
+            <div>
+              <h2 class="panel-heading">Current Scenario Details</h2>
+              </div>
+                <div class="panel-footer">
+                  <form> Scenario Name: 
+                    <input type="text" name="scenarioName">
+                    <button>Save</button>
+                    </form><br>
+                  <div>Current Scenario City: 
+                    <select>
+                      <option value="austin">Austin, TX</option>
+                      <option value="boston">Boston, MA</option>
+                      <option value="chicago">Chicago, Il</option>
+                      <option value="denver">Denver, CO</option>
+                      <option value="houston">Houston, TX</option>
+                      <option value="newYork">New York, NY</option>
+                      <option value="raleigh">Raleigh, NC</option>
+                      <option value="sanFrancisco">San Francisco, CA</option>
+                      <option value="seattle">Seattle, WA</option>
+                      <option value="washington">Washington, DC</option>
+                    </select>
+                  </div>
+                
+                  <br>
+                  <form>
+                  Expected Revenue: <input type="text" name="scenarioName"> / per Month<br>
+                  </form><br>
+                  <form>
+                  Office Space Required: <input type="text" name="scenarioName"> / sq.ft. (Helpful tip: 200 sq.ft. per person is typical)
+                  </form>
+              </div>
+            </div>
+            <!-- handsontable start -->
+            <div id="handsonTable" style="height:320px;overflow:hidden";>
+              <div id="example5" class="hot handsontable htColumnHeaders">
+              </div>
+            </div>
+            <br>
+            <!-- end handsontable -->
+            <div>
+                <button style="margin-bottom:50px;">Save Scenario</button>
+            </div>
+        </div>  
+
+    </body>
+    <script>
+      function runCityQuery() {
+        var currentURL = window.location.origin;
+
+        $.ajax({url: currentURL + "/api/cityInfo", method: "GET"})
+
+          .done(function(cityData){
+
+            console.log("__________________");
+            console.log("URL: " + currentURL + "/api/cityInfo");
+            console.log("__________________");
+            console.log(cityData);
+            console.log("__________________");
+          });
+      }
+      runCityQuery();
+    </script>
+</html>
